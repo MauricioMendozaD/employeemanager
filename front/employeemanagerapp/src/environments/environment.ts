@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:8080'
+  apiBaseUrl: 'http://employeemanagerapp.sa-east-1.elasticbeanstalk.com'
 };
 
 /*
