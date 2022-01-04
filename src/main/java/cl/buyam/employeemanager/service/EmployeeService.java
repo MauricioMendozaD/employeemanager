@@ -4,20 +4,22 @@ import cl.buyam.employeemanager.exception.UserNotFoundException;
 import cl.buyam.employeemanager.model.Employee;
 import cl.buyam.employeemanager.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
-@Service
+//@Service
+@Component
 public class EmployeeService {
 
-    private final EmployeeRepo employeeRepo;
-
     @Autowired
-    public EmployeeService(EmployeeRepo employeeRepo) {
+    private EmployeeRepo employeeRepo;
+
+    /*public EmployeeService(EmployeeRepo employeeRepo) {
         this.employeeRepo = employeeRepo;
-    }
+    }*/
 
     public Employee addEmployee(Employee employee) {
         employee.setEmployeeCode(UUID.randomUUID().toString());
@@ -25,6 +27,7 @@ public class EmployeeService {
     }
 
     public List<Employee> findAllEmployees() {
+        System.out.println("getting all employees.");
         return employeeRepo.findAll();
     }
 
